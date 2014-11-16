@@ -1,0 +1,20 @@
+﻿Library-Management
+==================
+
+Project môn UDPT HTTT HĐ
+
+========================================================
+MSSV		HỌ TÊN				VAI TRÒ
+
+1112389		Phan Quốc Vinh	 	      	Leader
+
+1112467		Tô Trần Minh Nhựt		Member
+
+1112092		Nguyễn Văn Trung Hiếu		Member
+
+1112109		Trực Sang Huê		        Member
+
+1112432		Đặng Đào Đức		        Member
+
+1112478		Nguyễn Thị Anh Sang	  	Member
+

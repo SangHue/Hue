@@ -72,6 +72,13 @@ body {
 	
 }
 
+/* Menu */
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+	color: #fff;
+	font-weight: bold;
+	background-color: #5ccff2;
+}
+
 /*
  * Main content
  */
