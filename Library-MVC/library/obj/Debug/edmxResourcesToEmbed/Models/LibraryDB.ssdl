@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="libraryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="libraryModelStoreContainer">
+    <EntitySet Name="CHI_TIET_THONG_TIN_TAC_GIA" EntityType="libraryModel.Store.CHI_TIET_THONG_TIN_TAC_GIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CHU_DE" EntityType="libraryModel.Store.CHU_DE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DOC_GIA" EntityType="libraryModel.Store.DOC_GIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LINH_VUC" EntityType="libraryModel.Store.LINH_VUC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NGON_NGU" EntityType="libraryModel.Store.NGON_NGU" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NHA_XUAT_BAN" EntityType="libraryModel.Store.NHA_XUAT_BAN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NHAN_VIEN" EntityType="libraryModel.Store.NHAN_VIEN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PHAN_MUC" EntityType="libraryModel.Store.PHAN_MUC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PHAN_NGANH" EntityType="libraryModel.Store.PHAN_NGANH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PHIEU_MUON" EntityType="libraryModel.Store.PHIEU_MUON" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PHIEU_PHAT" EntityType="libraryModel.Store.PHIEU_PHAT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ROLES" EntityType="libraryModel.Store.ROLES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SACH" EntityType="libraryModel.Store.SACH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TAC_GIA" EntityType="libraryModel.Store.TAC_GIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="THE_DOC_GIA" EntityType="libraryModel.Store.THE_DOC_GIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USER_ROLE" EntityType="libraryModel.Store.USER_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USERS" EntityType="libraryModel.Store.USERS" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ChuDe" Association="libraryModel.Store.FK_ChuDe">
+      <End Role="CHU_DE" EntitySet="CHU_DE" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChuDe_PhanMuc" Association="libraryModel.Store.FK_ChuDe_PhanMuc">
+      <End Role="PHAN_MUC" EntitySet="PHAN_MUC" />
+      <End Role="CHU_DE" EntitySet="CHU_DE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTTTTacGia" Association="libraryModel.Store.FK_CTTTTacGia">
+      <End Role="TAC_GIA" EntitySet="TAC_GIA" />
+      <End Role="CHI_TIET_THONG_TIN_TAC_GIA" EntitySet="CHI_TIET_THONG_TIN_TAC_GIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTTTTacGia_Sach" Association="libraryModel.Store.FK_CTTTTacGia_Sach">
+      <End Role="SACH" EntitySet="SACH" />
+      <End Role="CHI_TIET_THONG_TIN_TAC_GIA" EntitySet="CHI_TIET_THONG_TIN_TAC_GIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocGia" Association="libraryModel.Store.FK_DocGia">
+      <End Role="DOC_GIA" EntitySet="DOC_GIA" />
+      <End Role="THE_DOC_GIA" EntitySet="THE_DOC_GIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NgonNgu" Association="libraryModel.Store.FK_NgonNgu">
+      <End Role="NGON_NGU" EntitySet="NGON_NGU" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhaXuatBan" Association="libraryModel.Store.FK_NhaXuatBan">
+      <End Role="NHA_XUAT_BAN" EntitySet="NHA_XUAT_BAN" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanMuc_PhanNganh" Association="libraryModel.Store.FK_PhanMuc_PhanNganh">
+      <End Role="PHAN_NGANH" EntitySet="PHAN_NGANH" />
+      <End Role="PHAN_MUC" EntitySet="PHAN_MUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanNganh_LinhVuc" Association="libraryModel.Store.FK_PhanNganh_LinhVuc">
+      <End Role="LINH_VUC" EntitySet="LINH_VUC" />
+      <End Role="PHAN_NGANH" EntitySet="PHAN_NGANH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMuon_NhanVien" Association="libraryModel.Store.FK_PhieuMuon_NhanVien">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="PHIEU_MUON" EntitySet="PHIEU_MUON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMuon_PhieuPhat" Association="libraryModel.Store.FK_PhieuMuon_PhieuPhat">
+      <End Role="PHIEU_PHAT" EntitySet="PHIEU_PHAT" />
+      <End Role="PHIEU_MUON" EntitySet="PHIEU_MUON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMuon_Sach" Association="libraryModel.Store.FK_PhieuMuon_Sach">
+      <End Role="SACH" EntitySet="SACH" />
+      <End Role="PHIEU_MUON" EntitySet="PHIEU_MUON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuMuon_TheDocGia" Association="libraryModel.Store.FK_PhieuMuon_TheDocGia">
+      <End Role="THE_DOC_GIA" EntitySet="THE_DOC_GIA" />
+      <End Role="PHIEU_MUON" EntitySet="PHIEU_MUON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuPhat_NhanVien" Association="libraryModel.Store.FK_PhieuPhat_NhanVien">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="PHIEU_PHAT" EntitySet="PHIEU_PHAT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuPhat_TheDocGia" Association="libraryModel.Store.FK_PhieuPhat_TheDocGia">
+      <End Role="THE_DOC_GIA" EntitySet="THE_DOC_GIA" />
+      <End Role="PHIEU_PHAT" EntitySet="PHIEU_PHAT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TacGia" Association="libraryModel.Store.FK_TacGia">
+      <End Role="TAC_GIA" EntitySet="TAC_GIA" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="libraryModel.Store.FK_UserRole_Role">
+      <End Role="ROLES" EntitySet="ROLES" />
+      <End Role="USER_ROLE" EntitySet="USER_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Users" Association="libraryModel.Store.FK_UserRole_Users">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="USER_ROLE" EntitySet="USER_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_NhanVien" Association="libraryModel.Store.FK_Users_NhanVien">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="USERS" EntitySet="USERS" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CHI_TIET_THONG_TIN_TAC_GIA">
+    <Key>
+      <PropertyRef Name="MaSach" />
+      <PropertyRef Name="MaTacGia" />
+    </Key>
+    <Property Name="MaSach" Type="int" Nullable="false" />
+    <Property Name="MaTacGia" Type="int" Nullable="false" />
+    <Property Name="VaiTro" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CHU_DE">
+    <Key>
+      <PropertyRef Name="MaChuDe" />
+    </Key>
+    <Property Name="MaChuDe" Type="int" Nullable="false" />
+    <Property Name="TenChuDe" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaPhanMuc" Type="int" />
+  </EntityType>
+  <EntityType Name="DOC_GIA">
+    <Key>
+      <PropertyRef Name="MaDocGia" />
+    </Key>
+    <Property Name="MaDocGia" Type="int" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" Nullable="false" MaxLength="35" />
+    <Property Name="CMND" Type="char" MaxLength="15" />
+    <Property Name="GioiTinh" Type="int" />
+    <Property Name="DiaChi" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="35" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="QuocGia" Type="nvarchar" MaxLength="35" />
+    <Property Name="DonVi" Type="nvarchar" MaxLength="35" />
+    <Property Name="MaNV" Type="nvarchar" MaxLength="15" />
+    <Property Name="MSSV" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="LINH_VUC">
+    <Key>
+      <PropertyRef Name="MaLinhVuc" />
+    </Key>
+    <Property Name="MaLinhVuc" Type="int" Nullable="false" />
+    <Property Name="TenLinhVuc" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NGON_NGU">
+    <Key>
+      <PropertyRef Name="MaNgonNgu" />
+    </Key>
+    <Property Name="MaNgonNgu" Type="int" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenNgonNgu" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NHA_XUAT_BAN">
+    <Key>
+      <PropertyRef Name="MaNhaXuatBan" />
+    </Key>
+    <Property Name="MaNhaXuatBan" Type="int" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenNhaXuatBan" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="nvarchar" Nullable="false" MaxLength="35" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="11" />
+    <Property Name="Email" Type="nvarchar" MaxLength="35" />
+    <Property Name="SoCMND" Type="nvarchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="PHAN_MUC">
+    <Key>
+      <PropertyRef Name="MaPhanMuc" />
+    </Key>
+    <Property Name="MaPhanMuc" Type="int" Nullable="false" />
+    <Property Name="TenPhanMuc" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MaPhanNganh" Type="int" />
+  </EntityType>
+  <EntityType Name="PHAN_NGANH">
+    <Key>
+      <PropertyRef Name="MaPhanNganh" />
+    </Key>
+    <Property Name="MaPhanNganh" Type="int" Nullable="false" />
+    <Property Name="TenPhanNganh" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MaLinhVuc" Type="int" />
+  </EntityType>
+  <EntityType Name="PHIEU_MUON">
+    <Key>
+      <PropertyRef Name="MaTheDocGia" />
+      <PropertyRef Name="MaSach" />
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="MaTheDocGia" Type="int" Nullable="false" />
+    <Property Name="MaSach" Type="int" Nullable="false" />
+    <Property Name="STT" Type="int" Nullable="false" />
+    <Property Name="NgayMuon" Type="date" Nullable="false" />
+    <Property Name="NgayHetHan" Type="date" Nullable="false" />
+    <Property Name="NgayTra" Type="date" />
+    <Property Name="SoLanGiaHan" Type="int" Nullable="false" />
+    <Property Name="MaPhieuPhat" Type="int" />
+    <Property Name="NgayLapPhieuPhat" Type="date" />
+    <Property Name="TinhTrang" Type="int" />
+    <Property Name="MaNV" Type="int" />
+  </EntityType>
+  <EntityType Name="PHIEU_PHAT">
+    <Key>
+      <PropertyRef Name="MaPhieuPhat" />
+      <PropertyRef Name="NgayLap" />
+    </Key>
+    <Property Name="MaPhieuPhat" Type="int" Nullable="false" />
+    <Property Name="NgayLap" Type="date" Nullable="false" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoTien" Type="float" />
+    <Property Name="MaTheDocGia" Type="int" Nullable="false" />
+    <Property Name="MaNV" Type="int" />
+  </EntityType>
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="Role" />
+    </Key>
+    <Property Name="Role" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SACH">
+    <Key>
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaSach" Type="int" Nullable="false" />
+    <Property Name="NhanDeChinh" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="NhanDeSongSong" Type="nvarchar" MaxLength="100" />
+    <Property Name="NamXuatBan" Type="int" />
+    <Property Name="LanTaiBan" Type="int" />
+    <Property Name="KhoSach" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoiXuatBan" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoTrangCuoi" Type="int" />
+    <Property Name="SoTrangDau" Type="int" />
+    <Property Name="SoTrangNoiDung" Type="int" />
+    <Property Name="GiayPhepXuatBan" Type="nvarchar" MaxLength="50" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="100" />
+    <Property Name="TungThu" Type="nvarchar(max)" />
+    <Property Name="TrangThai" Type="int" />
+    <Property Name="MaChuDe" Type="int" />
+    <Property Name="MaTacGia" Type="int" />
+    <Property Name="MaNhaXuatBan" Type="int" />
+    <Property Name="MaNgonNgu" Type="int" />
+    <Property Name="TenVietTatTacGia" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TAC_GIA">
+    <Key>
+      <PropertyRef Name="MaTacGia" />
+    </Key>
+    <Property Name="MaTacGia" Type="int" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" Nullable="false" MaxLength="35" />
+    <Property Name="GioiTinh" Type="int" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="NgayMat" Type="date" />
+  </EntityType>
+  <EntityType Name="THE_DOC_GIA">
+    <Key>
+      <PropertyRef Name="MaTheDocGia" />
+    </Key>
+    <Property Name="MaTheDocGia" Type="int" Nullable="false" />
+    <Property Name="MaVach" Type="int" Nullable="false" />
+    <Property Name="MaDocGia" Type="int" Nullable="false" />
+    <Property Name="NgayHetHan" Type="date" Nullable="false" />
+    <Property Name="TrangThaiThe" Type="bit" />
+    <Property Name="Nhom" Type="int" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="USER_ROLE">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Role" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Role" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="PassWord" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaNV" Type="int" />
+  </EntityType>
+  <Association Name="FK_ChuDe">
+    <End Role="CHU_DE" Type="libraryModel.Store.CHU_DE" Multiplicity="0..1" />
+    <End Role="SACH" Type="libraryModel.Store.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHU_DE">
+        <PropertyRef Name="MaChuDe" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaChuDe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChuDe_PhanMuc">
+    <End Role="PHAN_MUC" Type="libraryModel.Store.PHAN_MUC" Multiplicity="0..1" />
+    <End Role="CHU_DE" Type="libraryModel.Store.CHU_DE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHAN_MUC">
+        <PropertyRef Name="MaPhanMuc" />
+      </Principal>
+      <Dependent Role="CHU_DE">
+        <PropertyRef Name="MaPhanMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTTTTacGia">
+    <End Role="TAC_GIA" Type="libraryModel.Store.TAC_GIA" Multiplicity="1" />
+    <End Role="CHI_TIET_THONG_TIN_TAC_GIA" Type="libraryModel.Store.CHI_TIET_THONG_TIN_TAC_GIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAC_GIA">
+        <PropertyRef Name="MaTacGia" />
+      </Principal>
+      <Dependent Role="CHI_TIET_THONG_TIN_TAC_GIA">
+        <PropertyRef Name="MaTacGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTTTTacGia_Sach">
+    <End Role="SACH" Type="libraryModel.Store.SACH" Multiplicity="1" />
+    <End Role="CHI_TIET_THONG_TIN_TAC_GIA" Type="libraryModel.Store.CHI_TIET_THONG_TIN_TAC_GIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="CHI_TIET_THONG_TIN_TAC_GIA">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocGia">
+    <End Role="DOC_GIA" Type="libraryModel.Store.DOC_GIA" Multiplicity="1" />
+    <End Role="THE_DOC_GIA" Type="libraryModel.Store.THE_DOC_GIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOC_GIA">
+        <PropertyRef Name="MaDocGia" />
+      </Principal>
+      <Dependent Role="THE_DOC_GIA">
+        <PropertyRef Name="MaDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NgonNgu">
+    <End Role="NGON_NGU" Type="libraryModel.Store.NGON_NGU" Multiplicity="0..1" />
+    <End Role="SACH" Type="libraryModel.Store.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGON_NGU">
+        <PropertyRef Name="MaNgonNgu" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaNgonNgu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhaXuatBan">
+    <End Role="NHA_XUAT_BAN" Type="libraryModel.Store.NHA_XUAT_BAN" Multiplicity="0..1" />
+    <End Role="SACH" Type="libraryModel.Store.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHA_XUAT_BAN">
+        <PropertyRef Name="MaNhaXuatBan" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaNhaXuatBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanMuc_PhanNganh">
+    <End Role="PHAN_NGANH" Type="libraryModel.Store.PHAN_NGANH" Multiplicity="0..1" />
+    <End Role="PHAN_MUC" Type="libraryModel.Store.PHAN_MUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHAN_NGANH">
+        <PropertyRef Name="MaPhanNganh" />
+      </Principal>
+      <Dependent Role="PHAN_MUC">
+        <PropertyRef Name="MaPhanNganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanNganh_LinhVuc">
+    <End Role="LINH_VUC" Type="libraryModel.Store.LINH_VUC" Multiplicity="0..1" />
+    <End Role="PHAN_NGANH" Type="libraryModel.Store.PHAN_NGANH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LINH_VUC">
+        <PropertyRef Name="MaLinhVuc" />
+      </Principal>
+      <Dependent Role="PHAN_NGANH">
+        <PropertyRef Name="MaLinhVuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMuon_NhanVien">
+    <End Role="NHAN_VIEN" Type="libraryModel.Store.NHAN_VIEN" Multiplicity="0..1" />
+    <End Role="PHIEU_MUON" Type="libraryModel.Store.PHIEU_MUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="PHIEU_MUON">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMuon_PhieuPhat">
+    <End Role="PHIEU_PHAT" Type="libraryModel.Store.PHIEU_PHAT" Multiplicity="0..1" />
+    <End Role="PHIEU_MUON" Type="libraryModel.Store.PHIEU_MUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEU_PHAT">
+        <PropertyRef Name="MaPhieuPhat" />
+        <PropertyRef Name="NgayLap" />
+      </Principal>
+      <Dependent Role="PHIEU_MUON">
+        <PropertyRef Name="MaPhieuPhat" />
+        <PropertyRef Name="NgayLapPhieuPhat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMuon_Sach">
+    <End Role="SACH" Type="libraryModel.Store.SACH" Multiplicity="1" />
+    <End Role="PHIEU_MUON" Type="libraryModel.Store.PHIEU_MUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="PHIEU_MUON">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuMuon_TheDocGia">
+    <End Role="THE_DOC_GIA" Type="libraryModel.Store.THE_DOC_GIA" Multiplicity="1" />
+    <End Role="PHIEU_MUON" Type="libraryModel.Store.PHIEU_MUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THE_DOC_GIA">
+        <PropertyRef Name="MaTheDocGia" />
+      </Principal>
+      <Dependent Role="PHIEU_MUON">
+        <PropertyRef Name="MaTheDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuPhat_NhanVien">
+    <End Role="NHAN_VIEN" Type="libraryModel.Store.NHAN_VIEN" Multiplicity="0..1" />
+    <End Role="PHIEU_PHAT" Type="libraryModel.Store.PHIEU_PHAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="PHIEU_PHAT">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuPhat_TheDocGia">
+    <End Role="THE_DOC_GIA" Type="libraryModel.Store.THE_DOC_GIA" Multiplicity="1" />
+    <End Role="PHIEU_PHAT" Type="libraryModel.Store.PHIEU_PHAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THE_DOC_GIA">
+        <PropertyRef Name="MaTheDocGia" />
+      </Principal>
+      <Dependent Role="PHIEU_PHAT">
+        <PropertyRef Name="MaTheDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TacGia">
+    <End Role="TAC_GIA" Type="libraryModel.Store.TAC_GIA" Multiplicity="0..1" />
+    <End Role="SACH" Type="libraryModel.Store.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAC_GIA">
+        <PropertyRef Name="MaTacGia" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="MaTacGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="ROLES" Type="libraryModel.Store.ROLES" Multiplicity="1" />
+    <End Role="USER_ROLE" Type="libraryModel.Store.USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLES">
+        <PropertyRef Name="Role" />
+      </Principal>
+      <Dependent Role="USER_ROLE">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Users">
+    <End Role="USERS" Type="libraryModel.Store.USERS" Multiplicity="1" />
+    <End Role="USER_ROLE" Type="libraryModel.Store.USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="USER_ROLE">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_NhanVien">
+    <End Role="NHAN_VIEN" Type="libraryModel.Store.NHAN_VIEN" Multiplicity="0..1" />
+    <End Role="USERS" Type="libraryModel.Store.USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="USERS">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
